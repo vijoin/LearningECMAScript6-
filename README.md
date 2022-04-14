@@ -10,3 +10,6 @@
   - Spread Operator
   - Let
   - Const
+  - Object params
+  - Arrow Functions
+  - Promises

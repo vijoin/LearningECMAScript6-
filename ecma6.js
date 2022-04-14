@@ -38,3 +38,63 @@ console.log(blockLet); // error: "ReferenceError: blockLet is not defined"
 // #Const
 const myConst = "a";
 myConst = "b"; // error: "TypeError: Assignment to constant variable."
+
+// # Object params, Shorter way to declare an object and its properties with same variable names
+let name = "victor";
+let age = 36;
+
+// before
+obj = { name: name, age, age };
+
+//es6
+obj2 = { name, age };
+console.log(obj2);
+
+// # Arrow Functions
+
+const names = [
+  { name: "victor", age: "36" },
+  { name: "carlos", age: "25" },
+  { name: "juan", age: "28" },
+];
+
+//before
+let listOfNames = names.map(function (item) {
+  return item.name;
+});
+
+//es6
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+listOfNames = names.map((item) => item.name);
+
+listOfNames2 = names.map((item) => {
+  // do somenthing
+  return something;
+});
+
+const arrFn = (a, b) => a + b;
+
+const arrowFn = (name, age) => {
+  // do something
+  return [name, age + 1];
+};
+
+const arrFn2 = () => "hello " + "world";
+
+// # Promises
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+// Basic structure
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if (true) {
+      resolve("Hey!");
+    } else {
+      reject("Ups!!");
+    }
+  });
+};
+
+helloPromise()
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));
